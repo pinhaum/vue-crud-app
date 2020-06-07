@@ -2,17 +2,20 @@
   <div id="app" class="small-container">
     <h1>Employees</h1>
 
+    <employee-form />
     <employee-table :employees="employees" />
   </div>
 </template>
 
 <script>
-import EmployeeTable from '@/components/EmployeeTable.vue'
+  import EmployeeTable from '@/components/EmployeeTable.vue'
+  import EmployeeForm from '@/components/EmployeeForm.vue'
 
 export default {
   name: 'app',
   components: {
     EmployeeTable,
+    EmployeeForm
   },
   data() {
     return {
@@ -39,14 +42,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
 button{
   background: #009435;
