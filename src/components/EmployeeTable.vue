@@ -26,7 +26,7 @@
             <button class="muted-button" @click="cancelEdit(employee)">Cancel</button>
           </td>
           <td v-else>
-            <button @click="editMode(employee.id)">Edit</button>
+            <button @click="editMode(employee)">Edit</button>
             <button @click="$emit('delete:employee', employee.id)">
               Delete
             </button>
