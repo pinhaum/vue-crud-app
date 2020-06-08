@@ -1,10 +1,10 @@
 .<template>
   <div class="employes-form">
-    <form>
+    <form @submit.prevent="handleSubmit">
       <label for>Employee Name</label>
-      <input type="text /" />
+      <input v-model="employee.name" type="text /" />
       <label for>Employee Email</label>
-      <input type="text /" />
+      <input v-model="employee.email" type="text /" />
       <button>Add Employee</button>
     </form>
   </div>
@@ -17,9 +17,14 @@ export default {
     return {
       employee: {
         name: "",
-        email: ""
-      }
+        email: "",
+      },
     };
+  },
+  methods: {
+    handleSubmit(){
+      this.$emit('add:employee', this.employee)
+    }
   }
 };
 </script>
@@ -31,7 +36,7 @@ form {
 input {
   width: 100%;
 }
-button{ 
+button {
   margin-top: 1rem;
 }
 </style>
